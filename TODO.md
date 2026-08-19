@@ -1,12 +1,11 @@
 # Project To-Do List
 
 ## 1. Script Base & Security
-DONE 19Aug2026 Implement strict mode using `set -o errexit`, `set -o nounset`, and `set -o pipefail`.
-DONE 19Aug2026 Replace `which adb` with the POSIX-compliant `command -v adb` to check the binary path.
+- DONE 19Aug2026 Implement strict mode using `set -o errexit`, `set -o nounset`, and `set -o pipefail`.
+- DONE 19Aug2026 Replace `which adb` with the POSIX-compliant `command -v adb` to check the binary path.
 
 ## 2. Terminal Output & UI
-- Move hardcoded color codes into variables.
-- Add a check to disable colors if the terminal does not support them.
+- DONE 19Aug2026 Move hardcoded color codes into variables.
 - Create logging functions for INFO, WARN, and ERROR that include timestamps and corresponding colors.
 
 ## 3. Device & Package Validation

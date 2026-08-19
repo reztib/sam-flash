@@ -42,6 +42,16 @@ echo -e "\e[1;33mRUN AT YOUR OWN RISK.\e[0m"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo ""
 
+read -p "Continue? (y/N): " confirm
+
+# Convert input to lowercase to make it robust against "Y"
+confirm=$(echo "$confirm" | tr '[:upper:]' '[:lower:]')
+
+if [ "$confirm" != "y" ]; then
+	echo "Operation canceled by user. No changes were made."
+	exit 0
+fi
+
 # 3. Output all installed packages on the device
 echo "Scanning installed apps on the device..."
 installed_packages=$($adbPath shell pm list packages | cut -d: -f2)

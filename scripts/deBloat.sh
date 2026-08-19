@@ -18,7 +18,7 @@ adbPath=$(command -v adb)
 if [ -t 1 ] || [ "$(tput colors 2>/dev/null || echo 0)" -lt 8 ]; then
 	local RED='\033[0;31m'
 	local GREEN='\033[0;32m'
-	local YELLOW='\033[1;33m'
+	local YELLOW='\033[0;33m'
 	local NC='\033[0m' # No Color
 else
 	local RED=''
@@ -29,7 +29,15 @@ fi
 
 logging() {
 	local timestamp=$(date +"%Y-%m-%d %H:%M:%S")
-	
+	log_info() {
+		echo -e "${GREEN}[INFO]${NC} [$timestamp] $1"
+	}
+	log_warn() {
+		echo -e "${YELLOW}[WARN]${NC} [$timestamp] $1"
+	}
+	log_error() {
+		echo -e "${RED}[ERROR]${NC} [$timestamp] $1"
+	}
 }
 
 # 1. Check if adb is installed

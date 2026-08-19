@@ -5,8 +5,12 @@
 # reztib, 18.08.2026
 # ==============================================================================
 
+set -o errexit
+set -o nounset
+set -eou pipefail
+
 # Path to adb in a variable (saves performance)
-adbPath=$(which adb)
+adbPath=$(command -v adb)
 
 # 1. Check if adb is installed
 if [ -z "$adbPath" ]; then

@@ -13,7 +13,9 @@ So I decided to use the tablet as a terminal server with Termux on it. What am I
 ## Project structure
 - apks: APKs I used during the course of this miserable journey. This is just a list, I'm not uploading whole APK files to GitHub
 - programs: any "helper" programs that saved my life and some explaining
-- scripts: Here is what I wrote myself to either help me (```cleanUp-tablet.sh```) or other scripts that are doing anything and everything
+- scripts: Here is what I wrote myself to either help me (```deBloat.sh```) or other scripts that are doing anything and everything
+- README.md: this document
+- diary.md: The voices.
 
 ## Work in progress
 As I said, this will be a continous project during which I will keep this repository updated (and especially my mental decline).

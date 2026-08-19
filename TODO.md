@@ -1,8 +1,8 @@
 # Project To-Do List
 
 ## 1. Script Base & Security
-- Implement strict mode using `set -o errexit`, `set -o nounset`, and `set -o pipefail`.
-- Replace `which adb` with the POSIX-compliant `command -v adb` to check the binary path.
+DONE 19Aug2026 Implement strict mode using `set -o errexit`, `set -o nounset`, and `set -o pipefail`.
+DONE 19Aug2026 Replace `which adb` with the POSIX-compliant `command -v adb` to check the binary path.
 
 ## 2. Terminal Output & UI
 - Move hardcoded color codes into variables.

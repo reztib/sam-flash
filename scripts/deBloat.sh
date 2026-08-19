@@ -12,19 +12,25 @@ set -eou pipefail
 # Path to adb in a variable (saves performance)
 adbPath=$(command -v adb)
 
-# Cutting corners here by checking if the terminal is a tty, they detect automatically if the terminal
-# supports colors or not by checking stdout / stderr file descriptors.
-if [ -t 1 ]; then
-	RED='\033[0;31m'
-	GREEN='\033[0;32m'
-	YELLOW='\033[1;33m'
-	NC='\033[0m' # No Color
+# Check if the terminal supports colors
+# btw, I could've cut corners here and just used [ -t 1 ]. tty detects if the terminal supports colors
+# via the stdout / stderr file descriptor.
+if [ -t 1 ] || [ "$(tput colors 2>/dev/null || echo 0)" -lt 8 ]; then
+	local RED='\033[0;31m'
+	local GREEN='\033[0;32m'
+	local YELLOW='\033[1;33m'
+	local NC='\033[0m' # No Color
 else
-	RED=''
-	GREEN=''
-	YELLOW=''
-	NC=''
+	local RED=''
+	local GREEN=''
+	local YELLOW=''
+	local NC=''
 fi
+
+logging() {
+	local timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+	
+}
 
 # 1. Check if adb is installed
 if [ -z "$adbPath" ]; then
